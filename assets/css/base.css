@@ -61,16 +61,14 @@ html {
 
 .modal__body {
     margin: auto;
-    background-color: var(--white-color);
     z-index: 1;
     position: relative;
-    border-radius: 5px;
 }
 
 /* Buttom */
 .btn {
     min-width: 142px;
-    height: 36px;
+    height: 34px;
     text-decoration: none;
     border: none;
     border-radius: 2px;
@@ -78,9 +76,20 @@ html {
     padding: 0;
     outline: none;
     cursor: pointer;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2rem;
 }
 
 .btn.btn--primary {
     color: var(--white-color);
     background-color: var(--primary-color);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding-left: 16px;
 }
