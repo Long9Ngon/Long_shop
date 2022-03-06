@@ -240,6 +240,7 @@
     border-radius: 5px;
     background-color: var(--white-color);
     overflow: hidden;
+    display: none;
 }
 
 .auth-form__container {
@@ -298,6 +299,7 @@
 
 .auth-form__controls {
     margin-top: 80px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: flex-end;
 }
@@ -336,4 +338,21 @@
 
 .auth-form__socials-text {
     margin: 0 32px;
+}
+
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+}
+
+.auth-form__text-help {
+    color: #939393;
+}
+
+.auth-form__help--separate {
+    display: block;
+    border-left: 1px solid #dfdddd;
+    height: 16px;
+    margin: 0 16px;
 }

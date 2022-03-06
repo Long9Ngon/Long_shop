@@ -32,6 +32,14 @@ html {
     flex-wrap: wrap;
 }
 
+.modal--open {
+    display: flex !important;
+}
+
+
+.auth-form--open {
+    display: block !important;
+}
 /* Animation */
 @keyframes fadeIn {
     from {
@@ -42,14 +50,24 @@ html {
     }
 }
 
+@keyframes grow {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 /* Modal */
 .modal {
-    display: flex;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    display: none;
+    animation: fadeIn linear 0.1s;
 }
 
 .modal__overlay {
@@ -63,6 +81,7 @@ html {
     margin: auto;
     z-index: 1;
     position: relative;
+    animation: grow linear 0.1s;
 }
 
 /* Buttom */

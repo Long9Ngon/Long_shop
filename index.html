@@ -93,8 +93,8 @@
                                 Trợ giúp
                             </a>
                         </li>
-                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
-                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate  js-registration">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong js-login">Đăng nhập</li>
                     </ul>
                 </nav>
             </div>
@@ -113,13 +113,14 @@
     <div class="modal">
         <div class="modal__overlay"></div>
 
-        <div class="modal__body">            
-            <div class="auth-form">
-
+        <div class="modal__body">
+    
+            <!-- Regisered form -->
+            <div class="auth-form regisered-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng ký</h3>
-                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                        <span class="auth-form__switch-btn js-switch-login">Đăng nhập</span>
                     </div>
 
                     <div class="auth-form__info">
@@ -143,7 +144,7 @@
                     </div>
 
                     <div class="auth-form__controls">
-                        <button class="btn auth-form__controls-space">TRỞ LẠI</button>
+                        <button class="btn auth-form__controls-space js-modal-close">TRỞ LẠI</button>
                         <button class="btn btn--primary">ĐĂNG KÝ</button>
                     </div>
                 </div>
@@ -158,8 +159,98 @@
                         <span class="auth-form__socials-text">Kết nối với Google</span>
                     </a>
                 </div>
-            </div>            
+            </div> 
+            
+            <!-- Login form -->
+            <div class="auth-form login-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <span class="auth-form__switch-btn js-switch-registration">Đăng ký</span>
+                    </div>
+
+                    <div class="auth-form__info">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <div class="auth-form__help">
+                            <a href="" class="auth-form__text-link">Quên mật khẩu</a>
+                            <span class="auth-form__help--separate"></span>
+                            <a href="" class="auth-form__text-link auth-form__text-help">Cần trợ giúp?</a>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls-space js-modal-close">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-facebook-square"></i>
+                        <span class="auth-form__socials-text">Kết nối với Facebook</span>
+                    </a>
+                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-text">Kết nối với Google</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Registration and login -->
+    <script>
+        const registration = document.querySelector('.js-registration')
+        const login = document.querySelector('.js-login')
+        const regiseredForm = document.querySelector('.regisered-form')
+        const loginForm = document.querySelector('.login-form')
+        const modal = document.querySelector('.modal')
+        const modalCloses = document.querySelectorAll('.js-modal-close')
+        const switchLogin = document.querySelector('.js-switch-login')
+        const switchRegistration = document.querySelector('.js-switch-registration')
+
+        function showRegiseredForm() {
+            modal.classList.add('modal--open')
+            regiseredForm.classList.add('auth-form--open')
+        }
+
+        function showLoginForm() {
+            modal.classList.add('modal--open')
+            loginForm.classList.add('auth-form--open')
+        }
+
+        function closeModal() {
+            modal.classList.remove('modal--open')
+            regiseredForm.classList.remove('auth-form--open')
+            loginForm.classList.remove('auth-form--open')
+        }
+
+        function switchLoginForm() {
+            regiseredForm.classList.remove('auth-form--open')
+            loginForm.classList.add('auth-form--open')
+        }
+
+        function switchRegistrationForm() {
+            loginForm.classList.remove('auth-form--open')
+            regiseredForm.classList.add('auth-form--open')
+        }
+        
+        registration.addEventListener('click', showRegiseredForm)
+        login.addEventListener('click', showLoginForm)
+        switchLogin.addEventListener('click', switchLoginForm)
+        switchRegistration.addEventListener('click', switchRegistrationForm)
+
+        for(const modalClose of modalCloses) {
+            modalClose.addEventListener('click', closeModal)
+        }
+    </script>
 </body>
 </html>
