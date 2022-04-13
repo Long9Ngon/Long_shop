@@ -1047,3 +1047,58 @@ i.home-product-item__like-icon-fill {
     line-height: 30px;
     border-radius: 2px;
 }
+
+/* footer */
+.footer {
+    padding-top: 16px;
+    border-top: 4px solid var(--primary-color);
+}
+
+.footer__heading {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.footer-list {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-item__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #737373;
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.footer-item__link:hover {
+    color: var(--primary-color);
+}
+
+.footer-item__icon {
+    font-size: 1.6rem;
+    margin: -1px 8px 0 0;
+}
+
+.footer__download {
+    display: flex;
+}
+
+.footer__download-qr {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--border-color);
+}
+
+.footer__download-apps {
+    display: flex;
+    margin-left: 16px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.footer__download-app-img {
+    height: 16px;
+}
